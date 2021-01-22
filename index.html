@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Form-Validator</title>
+</head>
+<body>
+    <div class="header">
+        everlytics
+    </div>
+<form id="myForm">
+    <div class="row">
+        <h1 class="form-heading">FORM</h1>
+        <div class="col-md-12 form-item">
+            <table>
+            <tr>
+                    <td>Select Your Source :</td>    
+                <td>
+                    <select class="form-select inputStyle" aria-label="Default select example" id="storage-select">
+                    <option  selected>Select the Source</option>
+                    <option value="1">Google Cloud Storage</option>
+                    <option value="2">Dropbox</option>
+                    <option value="3">Amazon Drive</option>
+                  </select>
+                </td>
+            </tr>
+                
+            <tr>
+                <td>Provide a name for pipeline :</td>
+                <td>
+                    <div>
+                        <input required type="text" title="Pipeline Name" id="pipelinename" name="for-pipeline" placeholder="e.g, cust_shop_energy_gateway001" id="pipe-line" minlength="5" class="form-element inputStyle"><br/>
+                        <span class="show-error"></span>
+                    </div>
+                </td>
+            </tr> 
+            <tr>
+                <td>CGS project name :</td>
+                <td>
+                    <div>
+                        <input required type="text" title="Project Name" name="project-id" id="project-id" placeholder="project-id" minlength="5"  class="form-element inputStyle"><br />
+                        <span class="show-error"></span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>CGS bucket name :</td>
+                <td>
+                    <div>
+                        <input required type="text" title="Bucket Name" name="bucket-name" id="bucket-name" placeholder="gs://your-bucket" minlength="5" class="form-element inputStyle"><br />
+                        <span class="show-error"></span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Input Cloud Storage File(s) :</td>
+                <td>
+                    <div>
+                        <input required type="text" title="Input Cloud" name="files-loc" id="files-loc" placeholder="CGS location of your files" minlength="5" class="form-element inputStyle"><br />
+                        <span class="show-error"></span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>CGS credentials :</td>
+                <td>
+                    <div>
+                        <input required type="password" title="CGS credential" name="credential" id="credential" minlength="5" class="form-element inputStyle"><br />
+                        <span class="show-error"></span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Run every :</td>
+                <td>
+                    <input required type="number" name="run" id="run" placeholder="(in minutes)"  min="0" oninput="validity.valid||(value='');" class="inputStyle">
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="btn-div">
+            <button class="btn btn-primary btn-lg" id="submit-btn" type="submit">CREATE</button>
+            <button class="btn btn-danger btn-lg" value="reset-form" onclick="resetForm()">CANCEL</button>
+        </div>
+    </div>
+</form>
+
+    <script src="./app.js"></script>
+</body>
+</html>
